@@ -1,0 +1,23 @@
+{
+  "name": "messaging-app-back-end",
+  "version": "1.0.0",
+  "description": "Messaging App Back End (The Odin Project, JavaScript Path, Node.js Course, Full-Stack Projects)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "devstart": "nodemon server.js",
+    "serverstart": "DEBUG=express:* npm run devstart"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
