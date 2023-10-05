@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 require("dotenv").config();
 
+const router = require('./routes/router');
+
 // express app
 const app = express();
 
@@ -16,6 +18,11 @@ main().catch((err) => console.log(err));
 async function main() {
     await mongoose.connect(mongoDB);
 }
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/', router);
 
 // listen for requests 
 app.listen(process.env.PORT, () => {
