@@ -1,19 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../models/user");
-const Chat = require("../models/chat");
-const Message = require("../models/message");
+const chat_controller = require("../controllers/chatController");
+const message_controller = require("../controllers/messageController");
+const { loginUser, signupUser } = require("../controllers/userController");
 
 // Login route
-router.post("/log-in", (req, res) => {
-    res.json({ message: "Login route" })
-});
+router.post("/log-in", loginUser);
 
 // Sign-up route
-router.post("/sign-up", (req, res) => {
-    res.json({ message: "Sign-up route" })
-});
+router.post("/sign-up", signupUser);
 
 // GET all chats
 router.get("/chats", (req, res) => {
